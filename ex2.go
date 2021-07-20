@@ -8,31 +8,31 @@ type tree struct{ // struct for tree
 	value string
 }
 
-func newnode(value string) *tree { // initialze new node
+func newnode(value string) *tree { // initialize new node
 	node := tree{nil, nil,value}
 	return &node
 }
 
-func inorder(node *tree) { // inorder traversal
+func (node *tree) inorder(){ // inorder traversal
 	if node != nil {
-		inorder(node.left)
+		node.left.inorder()
 		fmt.Println(node.value)
-		inorder(node.right)
+		node.right.inorder()
 	}
 }
 
-func preorder(node *tree) { // preorder traversal
+func (node *tree) preorder() { // preorder traversal
 	if node != nil {
 		fmt.Println(node.value)
-		preorder(node.left)
-		preorder(node.right)
+		node.left.preorder()
+		node.right.preorder()
 	}
 }
 
-func postorder(node *tree) { // postorder traversal
+func (node *tree) postorder() { // postorder traversal
 	if node != nil {
-		postorder(node.left)
-		postorder(node.right)
+		node.left.postorder()
+		node.right.postorder()
 		fmt.Println(node.value)
 	}
 }
@@ -44,7 +44,7 @@ func main(){
 	root.right.left = newnode("b")
 	root.right.right = newnode("c")
 
-	inorder(root)
-	preorder(root)
-	postorder(root)
+	root.inorder()
+	root.preorder()
+	root.postorder()
 }
