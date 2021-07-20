@@ -8,9 +8,9 @@ import (
 )
 
 type Matrix struct{
-	rows int `json:"rows"`
-	columns int `json:"columns"`
-	elements [][]int `json:"elements"`
+	rows int  `json:"rows"`
+	columns int  `json:"columns"`
+	elements [][]int  `json:"elements"`
 }
 
 func MatrixInit(row, column int) Matrix { // Matrix Initialization
