@@ -8,7 +8,7 @@ type Matrix struct{
 	elements [][]int
 }
 
-func MatrixInit(row, column int) Matrix {
+func MatrixInit(row, column int) Matrix { // Matrix Initialization
 	var matrix Matrix
 	matrix.rows = row
 	matrix.columns = column
@@ -20,19 +20,19 @@ func MatrixInit(row, column int) Matrix {
 	return matrix
 }
 
-func (matrix Matrix) GetNumberofRows() int {
+func (matrix Matrix) GetNumberofRows() int { // Get number of rows of a matrix
 	return matrix.rows
 }
 
-func (matrix Matrix) GetNumberofColumns() int {
+func (matrix Matrix) GetNumberofColumns() int { // Get number of columns of a matrix
 	return matrix.columns
 }
 
-func (matrix *Matrix)  set(i, j, value int) {
+func (matrix *Matrix)  set(i, j, value int) { // Set element on a particular position
 	matrix.elements[i][j] = value
 }
 
-func (FirstMatrix Matrix) add(SecondMatrix Matrix) Matrix {
+func (FirstMatrix Matrix) add(SecondMatrix Matrix) Matrix { // Add two matrices
 	row := FirstMatrix.rows
 	column := FirstMatrix.columns
 	FinalMatrix := FirstMatrix
