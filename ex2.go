@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type tree struct{ // struct for tree
 	left *tree
 	right *tree
@@ -14,24 +16,24 @@ func newnode(value string) *tree { // initialze new node
 func inorder(node *tree) { // inorder traversal
 	if node != nil {
 		inorder(node.left)
-		println(node.value)
+		fmt.Println(node.value)
 		inorder(node.right)
 	}
 }
 
 func preorder(node *tree) { // preorder traversal
-	if node == nil {
-		println(node.value)
+	if node != nil {
+		fmt.Println(node.value)
 		preorder(node.left)
 		preorder(node.right)
 	}
 }
 
 func postorder(node *tree) { // postorder traversal
-	if node == nil {
+	if node != nil {
 		postorder(node.left)
 		postorder(node.right)
-		println(node.value)
+		fmt.Println(node.value)
 	}
 }
 
@@ -42,4 +44,7 @@ func main(){
 	root.right.left = newnode("b")
 	root.right.right = newnode("c")
 
+	inorder(root)
+	preorder(root)
+	postorder(root)
 }
