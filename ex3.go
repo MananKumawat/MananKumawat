@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Employee interface { // Interface for all Employee having common method salary
 	salary() int
 }
@@ -29,6 +31,6 @@ func main () {
 
 	var employees = []Employee{fulltime, contractor, freelancer}
 	for _, employee := range employees {
-		println(employee.salary())
+		fmt.Println(employee.salary())
 	}
 }
