@@ -12,30 +12,27 @@ func newnode(value string) *tree { // initialze new node
 }
 
 func inorder(node *tree) { // inorder traversal
-	if node == nil {
-		return
+	if node != nil {
+		inorder(node.left)
+		println(node.value)
+		inorder(node.right)
 	}
-	inorder(node.left)
-	println(node.value)
-	inorder(node.right)
 }
 
 func preorder(node *tree) { // preorder traversal
 	if node == nil {
-		return
+		println(node.value)
+		preorder(node.left)
+		preorder(node.right)
 	}
-	println(node.value)
-	preorder(node.left)
-	preorder(node.right)
 }
 
 func postorder(node *tree) { // postorder traversal
 	if node == nil {
-		return
+		postorder(node.left)
+		postorder(node.right)
+		println(node.value)
 	}
-	postorder(node.left)
-	postorder(node.right)
-	println(node.value)
 }
 
 func main(){
