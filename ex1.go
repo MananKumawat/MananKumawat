@@ -13,10 +13,10 @@ func MatrixInit(row, column int) Matrix { // Matrix Initialization
 	matrix.rows = row
 	matrix.columns = column
 	vector := make([][]int, row)
+	matrix.elements := make([][]int, row)
 	for i:=0; i<row; i++{
-		vector[i] = make([]int, column)
+		matrix.elements[i] = make([]int, column)
 	}
-	matrix.elements = vector
 	return matrix
 }
 
