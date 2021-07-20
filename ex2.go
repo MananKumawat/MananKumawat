@@ -1,17 +1,17 @@
 package main
 
-type tree struct{
+type tree struct{ // struct for tree
 	left *tree
 	right *tree
 	value string
 }
 
-func newnode(value string) *tree {
+func newnode(value string) *tree { // initialze new node
 	node := tree{nil, nil,value}
 	return &node
 }
 
-func inorder(node *tree) {
+func inorder(node *tree) { // inorder traversal
 	if node == nil {
 		return
 	}
@@ -20,7 +20,7 @@ func inorder(node *tree) {
 	inorder(node.right)
 }
 
-func preorder(node *tree) {
+func preorder(node *tree) { // preorder traversal
 	if node == nil {
 		return
 	}
@@ -29,7 +29,7 @@ func preorder(node *tree) {
 	preorder(node.right)
 }
 
-func postorder(node *tree) {
+func postorder(node *tree) { // postorder traversal
 	if node == nil {
 		return
 	}
