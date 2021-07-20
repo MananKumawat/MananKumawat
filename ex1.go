@@ -12,7 +12,6 @@ func MatrixInit(row, column int) Matrix { // Matrix Initialization
 	var matrix Matrix
 	matrix.rows = row
 	matrix.columns = column
-	vector := make([][]int, row)
 	matrix.elements := make([][]int, row)
 	for i:=0; i<row; i++{
 		matrix.elements[i] = make([]int, column)
@@ -41,7 +40,7 @@ func (FirstMatrix Matrix) add(SecondMatrix Matrix) Matrix { // Add two matrices
 			FinalMatrix.elements[i][j] += SecondMatrix.elements[i][j]
 		}
 	}
-	return FirstMatrix
+	return FinalMatrix
 }
 
 func main() {
