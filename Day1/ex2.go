@@ -45,6 +45,8 @@ func main(){
 	root.right.right = newnode("c")
 
 	root.inorder()
+	fmt.Println()
 	root.preorder()
+	fmt.Println()
 	root.postorder()
 }
