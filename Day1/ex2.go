@@ -2,18 +2,18 @@ package main
 
 import "fmt"
 
-type tree struct{ // struct for tree
+type tree struct{  // struct for tree
 	left *tree
 	right *tree
 	value string
 }
 
-func newnode(value string) *tree { // initialize new node
+func newnode(value string) *tree {  // initialize new node
 	node := tree{nil, nil,value}
 	return &node
 }
 
-func (node *tree) inorder(){ // inorder traversal
+func (node *tree) inorder(){  // inorder traversal
 	if node != nil {
 		node.left.inorder()
 		fmt.Println(node.value)
@@ -21,7 +21,7 @@ func (node *tree) inorder(){ // inorder traversal
 	}
 }
 
-func (node *tree) preorder() { // preorder traversal
+func (node *tree) preorder() {  // preorder traversal
 	if node != nil {
 		fmt.Println(node.value)
 		node.left.preorder()
@@ -29,7 +29,7 @@ func (node *tree) preorder() { // preorder traversal
 	}
 }
 
-func (node *tree) postorder() { // postorder traversal
+func (node *tree) postorder() {  // postorder traversal
 	if node != nil {
 		node.left.postorder()
 		node.right.postorder()
@@ -45,6 +45,8 @@ func main(){
 	root.right.right = newnode("c")
 
 	root.inorder()
+	fmt.Println()
 	root.preorder()
+	fmt.Println()
 	root.postorder()
 }
